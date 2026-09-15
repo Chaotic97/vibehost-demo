@@ -1,5 +1,7 @@
 # VibeHost — UI demo
 
+**→ [chaotic97.github.io/vibehost-demo](https://chaotic97.github.io/vibehost-demo/)**
+
 A static preview of the VibeHost dashboard, published so it can be looked at
 without running anything.
 
