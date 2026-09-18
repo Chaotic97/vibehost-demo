@@ -4,15 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VibeHost</title>
-    <!-- Inline so there's no extra request (and no favicon.ico 404). An app
-         tile with a live-status dot — the same signal the dashboard uses. -->
+    <!-- Inline so there's no extra request (and no favicon.ico 404). The
+         Logomark (see src/components/ui/Logomark.tsx) baked as a static
+         data URI, since a favicon can't read CSS custom properties. -->
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1917'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%234ecb8b'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c93a0b'/%3E%3Cpath d='M13 9L23 16L13 23V9Z' fill='white'/%3E%3C/svg%3E"
     />
-    <!-- No web fonts: the dashboard uses the platform UI face (SF Pro, Segoe UI Variable), so nothing blocks first paint. -->
-    <script type="module" crossorigin src="/vibehost-demo/assets/index-s8DqhEY9.js"></script>
-    <link rel="stylesheet" crossorigin href="/vibehost-demo/assets/index-CtZJ1_cA.css">
+    <!-- Body text and UI chrome stay on the platform face (SF Pro, Segoe UI
+         Variable) — nothing there blocks first paint. One self-hosted
+         display face exists for the hero headline and the wordmark only;
+         see src/styles/base.css's @font-face comment for why that one
+         exception is worth it. Not preloaded here on purpose: it's
+         font-display: swap and scoped to two elements, so there's nothing
+         layout-critical waiting on it. -->
+    <script type="module" crossorigin src="/vibehost-demo/assets/index-Bx-kSD5q.js"></script>
+    <link rel="stylesheet" crossorigin href="/vibehost-demo/assets/index-zRBzE7zS.css">
   </head>
   <body>
     <div id="root"></div>
